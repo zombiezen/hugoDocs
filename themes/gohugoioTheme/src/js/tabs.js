@@ -3,7 +3,7 @@ var i;
 
 	// store tabs variable
 	var allTabs = document.querySelectorAll("[data-toggle-tab]");
-	var allPanes = document.querySelectorAll("[data-panel]");
+	var allPanes = document.querySelectorAll("[data-pane]");
 
 	function toggleTabs(event) {
 
@@ -18,15 +18,15 @@ var i;
 			window.localStorage.setItem("configLangPref", targetKey)
 		}
 		var selectedTabs = document.querySelectorAll("[data-toggle-tab='" + targetKey + "']");
-		var selectedPanes = document.querySelectorAll("[data-panel='" + targetKey + "']");
+		var selectedPanes = document.querySelectorAll("[data-pane='" + targetKey + "']");
 
 		for (var i = 0; i < allTabs.length; i++) {
-			allTabs[i].classList.remove("active", "bg-near-white");
+			allTabs[i].classList.remove("active");
 			allPanes[i].classList.remove("active");
 		}
 
 		for (var i = 0; i < selectedTabs.length; i++) {
-			selectedTabs[i].classList.add("active", "bg-near-white");
+			selectedTabs[i].classList.add("active");
 			selectedPanes[i].classList.add("active");
 		}
 
