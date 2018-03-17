@@ -1,11 +1,15 @@
 .tab-button{
-	margin-bottom:-1px;
+	margin-bottom:1px;
 	position: relative;
 	z-index: 1;
 	color:#333;
 	border-color:#ccc;
 	outline: none;
 	background-color:white;
+}
+.tab-pane .chroma{
+	background:none;
+	padding:0;
 }
 .tab-button.active{
 	border-bottom-color:#f3f4f4;

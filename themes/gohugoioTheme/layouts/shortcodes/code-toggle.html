@@ -10,8 +10,8 @@
 	</div>
 	<div class="tab-content">
 		{{ range $langs }}
-			<div data-pane="{{ . }}" class="code-copy-content nt3 tab-pane active">
-				<pre><code>{{ $.Inner | transform.Remarshal . | safeHTML }}</code></pre>
+			<div data-pane="{{ . }}" class="code-copy-content nt3 tab-pane {{ cond (eq . "yaml") "active" ""}}">
+				{{ highlight ($.Inner | transform.Remarshal . | safeHTML) . ""}}
 			</div>
 			{{ if ne ($.Get "copy") "false" }}
 				<button class="needs-js copy copy-toggle bg-accent-color-dark f6 absolute top-0 right-0 lh-solid hover-bg-primary-color-dark bn white ph3 pv2" title="Copy this code to your clipboard." data-clipboard-action="copy" aria-label="copy button">
